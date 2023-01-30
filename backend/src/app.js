@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
+const errorHandler = require("./middleWare/errorMiddleWare");
 
 const userRouter = require("./routes/userRoutes");
 
@@ -20,5 +21,7 @@ app.use("/api/users", userRouter);
 app.get("/", (req, res) => {
 	res.send("Home Page");
 });
+
+app.use(errorHandler);
 
 module.exports = app;
