@@ -16,7 +16,6 @@ const registerUser = asyncHandler(async (req, res) => {
 	}
 
 	// Check if user email alrady exists
-
 	const userExists = await User.findOne({ email });
 
 	if (userExists) {
@@ -25,7 +24,6 @@ const registerUser = asyncHandler(async (req, res) => {
 	}
 
 	// Create new user
-
 	const user = await User.create({
 		name,
 		email,
